@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Takes list with values and a value needs to be found
+// Takes sorted list with values and a value needs to be found
 // Returns index of this value in the list
 func binary_search(list []int, item int) int {
 	// The lowest and the highest index in the list
@@ -20,7 +20,7 @@ func binary_search(list []int, item int) int {
 			return guess
 		}
 
-		// If guess was too high or too low
+		// If guess value was too high or too low
 		if list[guess] > item {
 			high = guess - 1
 		} else {
