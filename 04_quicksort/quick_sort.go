@@ -10,16 +10,17 @@ func quick_sort(arr []int) []int {
 		return arr
 	} else {
 		// Recursive case
-		pivot := arr[0]
+		pivot := arr[len(arr)/2]
 
 		// 2 slices that store values less
 		// or greater than the pivot
 		less := []int{}
 		greater := []int{}
-		for _, num := range arr[1:] {
+		for _, num := range arr {
 			if num < pivot {
 				less = append(less, num)
-			} else {
+			}
+			if num > pivot {
 				greater = append(greater, num)
 			}
 		}
@@ -30,6 +31,6 @@ func quick_sort(arr []int) []int {
 }
 
 func main() {
-	arr := []int{20, 3, 1}
+	arr := []int{20, 3, 1, 2, 4, 6}
 	fmt.Println(quick_sort(arr))
 }
