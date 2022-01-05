@@ -32,13 +32,13 @@ func selection_sort(arr []int) []int {
 		// Append the smalles value to the new slice
 		new_arr = append(new_arr, arr[smallest])
 
-		// Pop it from tshe old slice
+		// Pop it from the old slice
 		arr = append(arr[:smallest], arr[smallest+1:]...)
 	}
 	return new_arr
 }
 
 func main() {
-	arr := []int{9, 8, 125, 1, 5, 7, 3}
+	arr := []int{9, 8, 125, 1, 5, 7, 3} // [1 3 5 7 8 9 125]
 	fmt.Println(selection_sort(arr))
 }
